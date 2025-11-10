@@ -1,0 +1,10 @@
+import numpy as np
+
+def duration_calculator(date_str):
+    input_date = np.datetime64(date_str)
+    today = np.datetime64('today')
+    return ( today - input_date).astype(int)
+
+date = input ("Enter a date (YYYY-MM-DD): ")
+days = duration_calculator(date)
+print(f"{days} days have passed since {date}.")

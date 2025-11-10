@@ -1,0 +1,18 @@
+import math
+def interest_calculator():
+    #ask the user for the necessary inputs
+    deposit=float(input("how much money are you depositting: "))
+    rate=float(input("what is the interest rate as a % : "))
+    years=int(input("how many years are you leaving your money for : "))
+    
+    #use the rule of 72 to calculate how many years to double
+    #I rounded up because i assumed interest will be paid at the end of each year
+    years_to_double= math.ceil(72/rate)
+    print(f"\n It will take {years_to_double} years for your money to double")
+
+    balance=deposit
+    #for loop to calculate and print balance at the end of each year
+    for x in range(years):
+        balance = round(balance * (1+rate/100),2)
+        print(f"your balance at the end of year {x+1} is {balance}")
+interest_calculator()
