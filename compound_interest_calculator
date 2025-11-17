@@ -6,7 +6,7 @@ def interest_calculator():
     years=int(input("how many years are you leaving your money for : "))
     
     #use the rule of 72 to calculate how many years to double
-    #I rounded up because i assumed interest will be paid at the end of each year
+    #rounded up because i assumed interest will be paid at the end of each year
     years_to_double= math.ceil(72/rate)
     print(f"\n It will take {years_to_double} years for your money to double")
 
