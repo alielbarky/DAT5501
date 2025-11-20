@@ -9,7 +9,6 @@ def interest_calculator():
     #rounded up because i assumed interest will be paid at the end of each year
     years_to_double= math.ceil(72/rate)
     print(f"\n It will take {years_to_double} years for your money to double")
-
     balance=deposit
     #for loop to calculate and print balance at the end of each year
     for x in range(years):
