@@ -1,0 +1,12 @@
+import numpy as np
+from duration_calculator import duration_calculator
+
+def test_duration_calculator_today():
+    #this test is based on the  idea that if we pass today's date into duration_calculator it should return 0 days
+
+    # create a date string for today
+    today_str = str(np.datetime64('today'))
+
+    result = duration_calculator(today_str)
+
+    assert result == 0

@@ -1,4 +1,5 @@
 import math
+
 def interest_calculator():
     #ask the user for the necessary inputs
     deposit=float(input("how much money are you depositting: "))
@@ -14,4 +15,5 @@ def interest_calculator():
     for x in range(years):
         balance = round(balance * (1+rate/100),2)
         print(f"your balance at the end of year {x+1} is {balance}")
+
 interest_calculator()

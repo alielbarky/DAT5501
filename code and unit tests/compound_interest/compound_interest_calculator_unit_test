@@ -1,5 +1,5 @@
 import unittest
-from compound_interest_calculator import interest_calculator
+from ci_calculator import interest_calculator
 
 class TestInterestCalculator(unittest.TestCase):
     def test_interest_calculator(self):
