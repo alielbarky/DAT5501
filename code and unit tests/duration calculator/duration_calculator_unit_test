@@ -1,12 +1,54 @@
+import unittest
 import numpy as np
-from duration_calculator import duration_calculator
+from datetime import date, timedelta
+from duration_calculator import duration_calculator 
 
-def test_duration_calculator_today():
-    #this test is based on the  idea that if we pass today's date into duration_calculator it should return 0 days
+class TestDurationCalculator(unittest.TestCase):    
+    def test_past_date(self):
+        #test how it handles days in the past
+        # Calculate a date exactly 5 days ago
+        past_date = date.today() - timedelta(days=5)
+        past_date_str = past_date.isoformat()
+        
+        expected_days = 5
+        actual_days = duration_calculator(past_date_str)
+        
+        self.assertEqual(actual_days, expected_days)
+        self.assertIsInstance(actual_days, np.int64)
 
-    # create a date string for today
-    today_str = str(np.datetime64('today'))
+    def test_today_date(self):
+        #test how it handles today (should return 0)
+        today_date_str = date.today().isoformat()
+        expected_days = 0
+        actual_days = duration_calculator(today_date_str)
+        
+        self.assertEqual(actual_days, expected_days)
 
-    result = duration_calculator(today_str)
+    def test_future_date(self):
+        #test how it handles future dates
+        #Calculate a date exactly 7 days from now
+        future_date = date.today() + timedelta(days=7)
+        future_date_str = future_date.isoformat()
+        
+        expected_days = -7
+        actual_days = duration_calculator(future_date_str)
+        self.assertEqual(actual_days, expected_days)
 
-    assert result == 0
+    def test_invalid_format_raises_exception(self):
+        #tedt various forms of invalid input
+        invalid_dates = [
+            "2023/10/01", # Wrong separator
+            "10-01-2023", # Wrong order
+            "October 1st, 2023",# Wrong format
+            "2023-13-01", # Invalid month
+            "hello" # Non-date string
+        ]
+        
+        for invalid_date in invalid_dates:
+            #ValueError should be raised for each invalid date
+            with self.assertRaises(ValueError):
+                duration_calculator(invalid_date)
+
+if __name__ == '__main__':
+    # The unittest.main() function runs all methods that start with 'test_'
+    unittest.main()
