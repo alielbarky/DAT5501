@@ -1,0 +1,1 @@
+This project was based on plotting synthetic data and adding noise to it to see how it affects it. the initial pipeline was a linear fit while the extended one was a quadratic andincluded dealing with outliiers. I unit tested for the goodness of the fit

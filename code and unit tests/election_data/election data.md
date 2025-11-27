@@ -1,0 +1,1 @@
+exploring the fraction of votes Trump got in different counties in teh 2016 primary elections. The extension task compares hilary clinton's and bernie sanders' votes across the 50states in a dual bar chart.

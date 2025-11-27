@@ -1,0 +1,1 @@
+This was one of the first unit tests i wrote , i wrote a function that asks the user some questions about a deposit into an interest paying account then printed how many years it would take to double his money and how much money they would have at the end of every year and then unit tested it.

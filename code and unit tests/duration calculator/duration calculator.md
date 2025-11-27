@@ -1,0 +1,1 @@
+This function uses np datetime64 to take a date input from a user and tell them how many days passed since if it's in the past or how many days until that date if it's in the future.

@@ -1,0 +1,1 @@
+This was my intro to unit testing i was learning how to write a unit test. I wrote a function that adds 2 numbers and unit tested it.
