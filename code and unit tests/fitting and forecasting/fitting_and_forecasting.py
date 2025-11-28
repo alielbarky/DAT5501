@@ -117,8 +117,7 @@ plt.xlabel('Year')
 plt.ylabel('Life Expectancy (Years)')
 plt.legend(loc='lower right')
 plt.grid(True, alpha=0.5)
-plt.savefig('part2_forecast_comparison.png')
-plt.close()
+plt.savefig('forecast_comparison.png')
 
 fig, ax1 = plt.subplots(figsize=(10, 6))
 
@@ -143,8 +142,7 @@ ax2.legend(lines + lines2, labels + labels2, loc='upper right')
 fig.suptitle('Model Selection Metrics vs. Polynomial Order', fontsize=14)
 fig.tight_layout()  
 plt.grid(True, axis='x', alpha=0.5)
-plt.savefig('part3_model_metrics.png')
-plt.close()
+plt.savefig('model_metrics.png')
 
 #print results table
 metrics_df = results_df[['order', 'k_params', 'ssr', 'chi2_per_dof', 'bic']].copy()
