@@ -1,0 +1,2 @@
+source of data: https://ourworldindata.org/life-expectancy
+This project maps global life expectancy data over the last 100 years with different polynomial degrees and attempts to forecast future data to see which degree polynomial is most accurate and generates the covariancer matrix for that model.

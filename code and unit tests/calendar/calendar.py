@@ -1,16 +1,5 @@
-#take inputs from a user
-#days_in_month = int(input("how many days in this month : "))
-#start_day=input("what day do you want the month to start on e.g. Monday, Tuesday etc. : ").lower()
-#days=["sunday","monday", "tuesday", "wednesday", "thursday", "friday", "saturday"]
 
-#position=int(days.index(start_day))
-#print(" S M T W T F S ")
-#print(position * " -")
-#counter = position
-#for count in range(days_in_month):
-#    print(days)
-
-#function to check inputs are valid
+#define function to check inputs are valid
 def check_input(prompt, min_val):
     # While loop to keep asking until we get a valid number
     while True:
@@ -21,10 +10,10 @@ def check_input(prompt, min_val):
             if value >= min_val:
                 return value
             else:
-                print(f"Oops! The value has to be at least {min_val}. Try again.")
+                print(f"The value has to be at least {min_val}. Try again.")
         except ValueError:
             # If they typed letters or a decimal, this catches it!
-            print("Whoops! Looks like that wasn't a valid number. Give it another shot.")
+            print("Looks like that wasn't a valid number. Try again.")
 
 def calendar():
     # get inputs from user and validate them

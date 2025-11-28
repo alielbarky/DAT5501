@@ -8,7 +8,7 @@ def duration_calculator(date_str):
 #ask the user for a date
 date_input = input ("Enter a date (YYYY-MM-DD): ").strip()
 
-#add error handling and how to handle future dates
+#error handling and how to handle future dates
 
 try:
     #Call the function to calculate duration
