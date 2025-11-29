@@ -6,3 +6,4 @@ unittest
 math
 scipy
 datetime
+scikit-learn
