@@ -1,9 +1,9 @@
 This project is a working progess.
 
 This project is a Monte Carlo simulation that aims to predict whether Zohran Mamdani's (New York mayor elect) economic policies are feasible given the funds he has available to him, the simulation will track how many times the costof the policies goes above/below the budget threshold. I isolated his 4 biggest promises of subsidised grocery stores, free buses, rent freezes and universal childcare. For the tax increases he plans, I assumed the subsequent tax revenue that he claims will be caused by these new taxes are accurate. It was not possible to accurately model the "ultra wealthy's" choosing to leave New York due to the high taxes so I assumed that would not happen for now.
-
+                                                                                                      
 these policies will have a greater effect on the economy than just helping people afford life. e.g. free buses means some people who weren't previously able to can now travel to work --> earn more income --> more tax revenue.  OR travel to universsity/school --> increase qualifications--> increase earning potential --> increase tax revenue. Therefore a multiplier (which is based on people's marginal propensity to consume) has been incorporated in the code, however the multiplier takes time to take effect so a 5 year time lag (which tapers off as the 5year period goes on as accepted by many economists) has been assumed. 
 more info on marginal propensity to consume here: https://www.economicshelp.org/university/marginal-propensity-to-consume/
-more info on multiplier effects here: https://www.investopedia.com/terms/m/multipliereffect.asp
+more info on multiplier effects here: https://www.investopedia.com/terms/m/multipliereffect.asp                                                                                                                                                               
 
 The costs of Mamdani's policies were based on some research of start up and running costs of similar services in New Yorkor taken directly from Mamdani's campaign but they are likely to be somewhat inaccurate. Despite this, the intention of this code is to have a semi-working simulation that can be later ammended with more accurate parameters.
