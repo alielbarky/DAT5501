@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 #random seed for reproducibility
-np.random.seed(42)
+np.random.seed(26)
 
 #1. set up the parameters
 num_iterations = 20000  #Number of simulation runs
@@ -65,7 +65,7 @@ accumulated_fiscal_position = np.zeros(num_iterations)
 rent_crisis_triggered = np.zeros(num_iterations, dtype=bool)
 annual_failure_count = np.zeros(num_iterations)
 
-#4. main Monte Carlo Loop
+#main Monte Carlo Loop
 for i in range(num_iterations):
     #arrays to store annual results for this run
     total_cost_t = np.zeros(time_horizon)
@@ -135,7 +135,7 @@ mean_net_position = np.mean(accumulated_fiscal_position)
 # % of runs net fiscal position was negative
 prob_failure = np.mean(accumulated_fiscal_position < 0) * 100
 
-# C. 5th Percentile Net Accumulated Position (Maximum Plausible Risk)
+#5th Percentile Net Accumulated Position (Maximum Plausible Risk)
 fifth_percentile = np.percentile(accumulated_fiscal_position, 5)
 
 #policy risk metrics i.e. a rent crisis
@@ -161,8 +161,7 @@ plt.ylabel('Density', fontsize=12)
 plt.legend(loc='upper left')
 plt.grid(axis='y', linestyle='--', alpha=0.7)
 plt.tight_layout()
-plt.show()
-plt.savefig('accumulated_fiscal_position_pdf.png')
+plt.savefig("PDF.png")
 
 
 #Histogram
@@ -173,15 +172,13 @@ plt.hist(accumulated_fiscal_position, bins=50, color='#4682B4', edgecolor='black
 plt.axvline(mean_net_position, color='green', linestyle='--', linewidth=1.5, label=f'Mean: ${mean_net_position:.2f}B')
 plt.axvline(fifth_percentile, color='red', linestyle=':', linewidth=1.5, label=f'5th Percentile: ${fifth_percentile:.2f}B')
 plt.axvline(0, color='black', linestyle='-', linewidth=1.0, label='Break-Even Point ($0B)')
-
 plt.title('2. Histogram of Accumulated Fiscal Position (20 Years)', fontsize=14)
 plt.xlabel('Net Accumulated Fiscal Position ($ Billions)', fontsize=12)
 plt.ylabel('Density', fontsize=12)
 plt.legend(loc='upper left')
 plt.grid(axis='y', linestyle='--', alpha=0.7)
 plt.tight_layout()
-plt.show()
-plt.savefig('accumulated_fiscal_position_histogram.png')
+plt.savefig("histogram.png")
 
 print("Monte Carlo Simulation Results (20-Year Horizon)")
 print("")
